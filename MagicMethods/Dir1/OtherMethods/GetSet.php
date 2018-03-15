@@ -5,12 +5,12 @@ class GetSet
 {
 	public function __get($name)
 	{
-		echo 'Klasės ' . __CLASS__ . ' kintamasis "' . $name . '" neegzistuoja.<hr>';
+		echo 'Klasės <b>' . __CLASS__ . '</b> kintamasis "' . $name . '" neegzistuoja.<hr>';
 	}
 
-	public function __set($name, $value) 
+	public function __set($name, $value)
 	{
-		echo 'Klasės ' . __CLASS__ . ' kintamasis "' . $name . '" neegzistuoja, todėl jam negalima priskirti reikšmės "' . $value . '"<hr>';
+		echo 'Klasės <b>' . __CLASS__ . '</b> kintamasis "' . $name . '" neegzistuoja, todėl jam negalima priskirti reikšmės "' . $value . '"<hr>';
 	}
 }
 ?>

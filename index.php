@@ -21,10 +21,10 @@ $getSet->kitasKintamasis = 123;
 // __isset; __unset
 $issetUnset = new MagicMethods\Dir1\OtherMethods\B\IssetUnset();
 if (isset($issetUnset->name)) {
-	echo 'Klasės ' . get_class($issetUnset) . ' kintamasis "name" egzistuoja.<br>';
+	echo 'Klasės <b>' . get_class($issetUnset) . '</b> kintamasis "name" egzistuoja.<br>';
 }
 if (isset($issetUnset->name2)) {
-	echo 'Klasės ' . get_class($issetUnset) . ' kintamasis "name2" egzistuoja.<br>';
+	echo 'Klasės <b>' . get_class($issetUnset) . '</b> kintamasis "name2" egzistuoja.<br>';
 }
 
 unset($issetUnset->name);
@@ -40,5 +40,23 @@ echo '</pre><hr>';
 $unserialized = unserialize($serialized);
 echo 'Deserializuoti duomenys:<br><pre>';
 var_dump($unserialized);
+echo '</pre><hr>';
+
+// __toString; __invoke
+$tostringInvoke = new MagicMethods\Dir2\TostringInvoke('Petras', 'Jonas', 'Petraitis', 29);
+echo $tostringInvoke . '<hr>';
+echo '2 + 3 = ' . $tostringInvoke(2, 3) . '<hr>';
+
+// __set_state; __clone
+$setstateClone = new MagicMethods\Dir2\OtherMethods\SetstateClone('anonymous', 'anonymous@gmail.com', '$2a$10$RDlrqT2.lviwUiCaKzUeOeIAW0h4hMf/4eRyYZt85IpQHjL//Mh8e');
+eval('$exported = ' . var_export($setstateClone, true) . ';');
+echo 'Eksportuotas objektas:<br><pre>';
+var_dump($exported);
+echo '</pre><hr>';
+
+// __debugInfo
+$debugInfo = new DebugInfo(4, 7);
+echo '<pre>';
+var_dump($debugInfo);
 echo '</pre><hr>';
 ?>

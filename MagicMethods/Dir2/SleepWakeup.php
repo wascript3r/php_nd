@@ -15,13 +15,13 @@ class SleepWakeup
 
 	public function __sleep()
 	{
-		echo 'Bandoma iškviesti serialize() funkciją klasei ' . __CLASS__ . '.<br>';
+		echo 'Bandoma iškviesti serialize() funkciją <b>' . __CLASS__ . '</b> klasės objektui.<br>';
 		return ['firstname', 'lastname', 'age'];
 	}
 
-	public function __wakeup() 
+	public function __wakeup()
 	{
-		echo 'Bandoma iškviesti unserialize() funkciją klasei ' . __CLASS__ . '.<br>';
+		echo 'Bandoma iškviesti unserialize() funkciją <b>' . __CLASS__ . '</b> klasės objektui.<br>';
 	}
 }
 ?>

@@ -7,12 +7,12 @@ class IssetUnset
 
 	public function __isset($name)
 	{
-		echo 'Bandoma iškviesti isset() funkciją neegzistuojamčiam klasės ' . __CLASS__ . ' kintamajam.<hr>';
+		echo 'Bandoma iškviesti isset() funkciją neegzistuojamčiam klasės <b>' . __CLASS__ . '</b> kintamajam.<hr>';
 	}
 
-	public function __unset($name) 
+	public function __unset($name)
 	{
-		echo 'Bandoma iškviesti unset() funkciją neegzistuojančiam klasės ' . __CLASS__ . ' kintamajam.<hr>';
+		echo 'Bandoma iškviesti unset() funkciją neegzistuojančiam klasės <b>' . __CLASS__ . '</b> kintamajam.<hr>';
 	}
 }
 ?>
