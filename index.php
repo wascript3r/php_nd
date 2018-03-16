@@ -47,11 +47,20 @@ $tostringInvoke = new MagicMethods\Dir2\TostringInvoke('Petras', 'Jonas', 'Petra
 echo $tostringInvoke . '<hr>';
 echo '2 + 3 = ' . $tostringInvoke(2, 3) . '<hr>';
 
-// __set_state; __clone
-$setstateClone = new MagicMethods\Dir2\OtherMethods\SetstateClone('anonymous', 'anonymous@gmail.com', '$2a$10$RDlrqT2.lviwUiCaKzUeOeIAW0h4hMf/4eRyYZt85IpQHjL//Mh8e');
-eval('$exported = ' . var_export($setstateClone, true) . ';');
+// __set_state
+$setstate = new MagicMethods\Dir2\OtherMethods\Setstate('anonymous', 'anonymous@gmail.com', '$2a$10$RDlrqT2.lviwUiCaKzUeOeIAW0h4hMf/4eRyYZt85IpQHjL//Mh8e');
+eval('$exported = ' . var_export($setstate, true) . ';');
 echo 'Eksportuotas objektas:<br><pre>';
 var_dump($exported);
+echo '</pre><hr>';
+
+// __clone
+$original = new MagicMethods\Dir2\OtherMethods\CloneMethod();
+$clone = clone $original;
+echo 'Originalus objektas:<br><pre>';
+var_dump($original);
+echo '</pre>Klonuotas objektas:<br><pre>';
+var_dump($clone);
 echo '</pre><hr>';
 
 // __debugInfo

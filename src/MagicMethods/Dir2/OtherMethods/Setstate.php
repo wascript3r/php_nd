@@ -1,7 +1,7 @@
 <?php
 namespace MagicMethods\Dir2\OtherMethods;
 
-class SetstateClone
+class Setstate
 {
 	public $username, $email, $password;
 	private $user = true;
@@ -16,7 +16,7 @@ class SetstateClone
 	public static function __set_state($array)
 	{
 		echo 'Bandoma iškviesti var_export() funkciją <b>' . __CLASS__ . '</b> klasės objektui.<br>';
-		return new SetstateClone($array['username'], $array['email'], null);
+		return new Setstate($array['username'], $array['email'], null);
 	}
 }
 ?>
